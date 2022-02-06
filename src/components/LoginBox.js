@@ -14,7 +14,7 @@ const LoginBox = ({ setEmail, setPassword, loginUser }) => {
     }
 
     return (
-        <div className='border border-primary border-4 rounded p-3 form-group'>
+        <div className='border border-primary border-4 rounded p-3 form-group bg-white'>
             <label htmlFor="email">Email: </label><br />
             <input type="text" id="email" className='form-control' onChange={emailInputHandler} /><br />
             <label htmlFor="password">Password</label><br />

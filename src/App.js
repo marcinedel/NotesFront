@@ -1,12 +1,18 @@
 import './App.css';
-import {useState} from 'react'
-
-import LoginBox from './components/LoginBox.js'
+import {useState, useContext} from 'react'
+import { UserInfoContext } from './contexts/userInfoProvider.js';
 
 function App() {
+  const {userInfo, setUserInfo} = useContext(UserInfoContext)
+  let content
+  if (userInfo == undefined) {
+    content = <div>Not logged</div>
+  } else {
+    content = <div>{userInfo.email}</div>
+  }
   return (
     <div className="App">
-      <div>Main page</div>
+     {content} 
     </div>
   );
 }
