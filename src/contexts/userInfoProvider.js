@@ -1,9 +1,15 @@
 import React, { createContext, useState } from 'react'
+import jwt_decode from 'jwt-decode';
 
 export const UserInfoContext = createContext()
 
 const UserInfoProvider = ({ children }) => {
-    const [userInfo, setUserInfo] = useState()
+    const token = localStorage.getItem('token')
+    let jwtDecoded
+    if (token) {
+        jwtDecoded = jwt_decode(token)
+    }
+    const [userInfo, setUserInfo] = useState(jwtDecoded)
 
     const values = {userInfo, setUserInfo}
 
