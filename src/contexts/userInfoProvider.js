@@ -6,8 +6,8 @@ export const UserInfoContext = createContext()
 const UserInfoProvider = ({ children }) => {
     const token = localStorage.getItem('token')
     let jwtDecoded
-    if (!token === undefined) {
-        jwt_decode(token)
+    if (token) {
+        jwtDecoded = jwt_decode(token)
     }
     const [userInfo, setUserInfo] = useState(jwtDecoded)
 

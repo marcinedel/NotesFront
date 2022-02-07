@@ -6,7 +6,7 @@ export default function Navbar() {
     
     const logoutHandler = (e) => {
         setUserInfo(undefined)
-        localStorage.setItem('token',undefined)
+        localStorage.removeItem('token')
     }
     let content
     if (userInfo == undefined) {
