@@ -14,6 +14,7 @@ import UserInfoProvider from './contexts/userInfoProvider';
 
 //Routes imports
 import Login from './routes/login'
+import AddNote from './routes/addNote';
 
 const style = () => {
   return (
@@ -60,6 +61,7 @@ ReactDOM.render(
             <Routes>
               <Route path="/" element={<App />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/addNote" element={<AddNote/>} />
             </Routes>
           </BrowserRouter>
         </div>
